@@ -18,6 +18,7 @@ class PayPalConstants
      * Approval URL for Payment
      */
     const APPROVAL_URL = 'approval_url';
+    const APPROVE = 'approve';
 
     const REST_SANDBOX_ENDPOINT = "https://api.sandbox.paypal.com/";
     const OPENID_REDIRECT_SANDBOX_URL = "https://www.sandbox.paypal.com";
