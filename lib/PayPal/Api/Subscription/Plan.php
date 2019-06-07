@@ -379,4 +379,34 @@ class Plan extends PayPalResourceModel {
 		);
 		return true;
 	}
+	
+	/**
+	 * List billing plans according to optional query string parameters specified.
+	 *
+	 * @param array $params
+	 * @param ApiContext $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
+	 * @param PayPalRestCall $restCall is the Rest Call Service that is used to make rest calls
+	 * @return PlanList
+	 */
+	public static function all($params, $apiContext = null, $restCall = null)
+	{
+		ArgumentValidator::validate($params, 'params');
+		$payLoad = "";
+		$allowedParams = array(
+			'page_size' => 1,
+			'page' => 1,
+			'total_required' => 1
+		);
+		$json = self::executeCall(
+			"/v1/billing/plans/" . "?" . http_build_query(array_intersect_key($params, $allowedParams)),
+			"GET",
+			$payLoad,
+			null,
+			$apiContext,
+			$restCall
+		);
+		$ret = new PlanList();
+		$ret->fromJson($json);
+		return $ret;
+	}
 }
