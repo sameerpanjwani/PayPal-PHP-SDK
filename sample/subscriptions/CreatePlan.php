@@ -16,14 +16,14 @@ if (defined('CREATED_PRODUCT_ID')) {
 // Create a new instance of Plan object
 $plan = new \PayPal\Api\Subscription\Plan();
 
-$pricingScheme = new \PayPal\Api\PricingScheme();
+$pricingScheme = new \PayPal\Api\Subscription\PricingScheme();
 $pricingScheme
 	->setFixedPrice(new \PayPal\Api\Subscription\Money(array('currency_code' => 'EUR', 'value' => 10)));
 
-$billingCycle = new \PayPal\Api\BillingCycle();
+$billingCycle = new \PayPal\Api\Subscription\BillingCycle();
 $billingCycle
 	->setPricingScheme($pricingScheme)
-	->setFrequency(new \PayPal\Api\Frequency(array('interval_unit' => 'DAY', 'interval_count' => 7)))
+	->setFrequency(new \PayPal\Api\Subscription\Frequency(array('interval_unit' => 'DAY', 'interval_count' => 7)))
 	->setTenureType('REGULAR')
 	->setSequence(1);
 
@@ -34,8 +34,8 @@ $plan
 	->setName('T-Shirt of the Month Club Plan')
     ->setDescription('Template creation.')
     ->addBillingCycle($billingCycle)
-	->setPaymentPreferences(new \PayPal\Api\PaymentPreferences())
-	->setTaxes(new \PayPal\Api\Taxes(array('percentage' => 19, 'inclusive' => false)));
+	->setPaymentPreferences(new \PayPal\Api\Subscription\PaymentPreferences())
+	->setTaxes(new \PayPal\Api\Subscription\Taxes(array('percentage' => 19, 'inclusive' => false)));
 
 // For Sample Purposes Only.
 $request = clone $plan;

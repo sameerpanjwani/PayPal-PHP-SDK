@@ -13,7 +13,8 @@ if (defined('CREATED_PLAN_ID')) {
 	$planId = CREATED_PLAN_ID;
 }
 
-$subscription = new \PayPal\Api\Subscription();
+
+$subscription = new \PayPal\Api\Subscription\Subscription();
 $subscription
 	->setPlanId($planId)
 	#->setStartTime(date('c'))

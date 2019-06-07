@@ -9,6 +9,6 @@ define('CREATED_PRODUCT_ID', $createdProduct->getId());
 $createdPlan = require 'CreatePlan.php';
 define('CREATED_PLAN_ID', $createdPlan->getId());
 
-/** @var \PayPal\Api\Subscription $subscription
+/** @var \PayPal\Api\Subscription\Subscription $subscription
  */
 $subscription = require 'CreateSubscription.php';
