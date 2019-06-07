@@ -8,19 +8,19 @@ use PayPal\Common\PayPalModel;
  *
  * @package PayPal\Api\Subscription
  *
- * @property Money amount
+ * @property \PayPal\Api\Subscription\Money amount
  * @property string time
  */
 class LastPaymentDetails extends PayPalModel {
 	/**
-	 * @return Money
+	 * @return \PayPal\Api\Subscription\Money
 	 */
 	public function getAmount() {
 		return $this->amount;
 	}
 	
 	/**
-	 * @param Money $amount
+	 * @param \PayPal\Api\Subscription\Money $amount
 	 *
 	 * @return $this
 	 */

@@ -8,23 +8,23 @@ use PayPal\Common\PayPalModel;
  *
  * @package PayPal\Api\Subscription
  *
- * @property LastPaymentDetails outstanding_balance
- * @property CycleExecution[] cycle_executions
- * @property Money last_payment
+ * @property \PayPal\Api\Subscription\LastPaymentDetails outstanding_balance
+ * @property \PayPal\Api\Subscription\CycleExecution[] cycle_executions
+ * @property \PayPal\Api\Subscription\Money last_payment
  * @property string next_billing_time
  * @property string final_payment_time
  * @property integer failed_payments_count
  */
 class BillingInfo extends PayPalModel {
 	/**
-	 * @return LastPaymentDetails
+	 * @return \PayPal\Api\Subscription\LastPaymentDetails
 	 */
 	public function getOutstandingBalance() {
 		return $this->outstanding_balance;
 	}
 	
 	/**
-	 * @param LastPaymentDetails $outstanding_balance
+	 * @param \PayPal\Api\Subscription\LastPaymentDetails $outstanding_balance
 	 *
 	 * @return $this
 	 */
@@ -35,14 +35,14 @@ class BillingInfo extends PayPalModel {
 	}
 	
 	/**
-	 * @return CycleExecution[]
+	 * @return \PayPal\Api\Subscription\CycleExecution[]
 	 */
 	public function getCycleExecutions() {
 		return $this->cycle_executions;
 	}
 	
 	/**
-	 * @param CycleExecution[] $cycle_executions
+	 * @param \PayPal\Api\Subscription\CycleExecution[] $cycle_executions
 	 *
 	 * @return $this
 	 */
@@ -55,7 +55,7 @@ class BillingInfo extends PayPalModel {
 	/**
 	 * Append CycleExecution to the list.
 	 *
-	 * @param CycleExecution $cycleExecution
+	 * @param \PayPal\Api\Subscription\CycleExecution $cycleExecution
 	 *
 	 * @return $this
 	 */
@@ -70,14 +70,14 @@ class BillingInfo extends PayPalModel {
 	}
 	
 	/**
-	 * @return Money
+	 * @return \PayPal\Api\Subscription\Money
 	 */
 	public function getLastPayment() {
 		return $this->last_payment;
 	}
 	
 	/**
-	 * @param Money $last_payment
+	 * @param \PayPal\Api\Subscription\Money $last_payment
 	 *
 	 * @return $this
 	 */

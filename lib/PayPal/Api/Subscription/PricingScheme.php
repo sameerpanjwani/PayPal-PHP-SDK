@@ -10,7 +10,7 @@ use PayPal\Common\PayPalModel;
  * @package PayPal\Api
  *
  * @property integer version
- * @property Money fixed_price
+ * @property \PayPal\Api\Subscription\Money fixed_price
  * @property string create_time
  * @property string update_time
  */
@@ -34,14 +34,14 @@ class PricingScheme extends PayPalModel {
 	}
 	
 	/**
-	 * @return Money
+	 * @return \PayPal\Api\Subscription\Money
 	 */
 	public function getFixedPrice() {
 		return $this->fixed_price;
 	}
 	
 	/**
-	 * @param Money $fixed_price
+	 * @param \PayPal\Api\Subscription\Money $fixed_price
 	 *
 	 * @return $this
 	 */

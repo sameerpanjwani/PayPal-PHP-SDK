@@ -2,6 +2,7 @@
 
 namespace PayPal\Api\Subscription;
 
+use PayPal\Api\PatchRequest;
 use PayPal\Common\PayPalResourceModel;
 use PayPal\Core\PayPalConstants;
 use PayPal\Rest\ApiContext;
@@ -18,15 +19,15 @@ use PayPal\Validation\ArgumentValidator;
  * @property string id
  * @property string plan_id
  * @property string quantity
- * @property ShippingAmount shipping_amount
- * @property Subscriber subscriber
+ * @property \PayPal\Api\Subscription\ShippingAmount shipping_amount
+ * @property \PayPal\Api\Subscription\Subscriber subscriber
  * @property bool auto_renewal
- * @property ApplicationContext application_context
+ * @property \PayPal\Api\Subscription\ApplicationContext application_context
  * @property string status
  * @property string status_change_note
  * @property string status_update_time
  * @property string start_time
- * @property BillingInfo billing_info
+ * @property \PayPal\Api\Subscription\BillingInfo billing_info
  * @property string create_time
  * @property string update_time
  */
@@ -127,7 +128,7 @@ class Subscription extends PayPalResourceModel
 	/**
 	 * The shipping charges.
 	 *
-	 * @param \PayPal\Api\ShippingAmount $quantity
+	 * @param \PayPal\Api\Subscription\ShippingAmount $quantity
 	 *
 	 * @return $this
 	 */
@@ -140,22 +141,22 @@ class Subscription extends PayPalResourceModel
 	/**
 	 * The quantity of the product in the subscription.
 	 *
-	 * @return string
+	 * @return \PayPal\Api\Subscription\ShippingAmount
 	 */
 	public function getShippingAmount()
 	{
-		return $this->quantity;
+		return $this->shipping_amount;
 	}
 	
 	/**
-	 * @return Subscriber
+	 * @return \PayPal\Api\Subscription\Subscriber
 	 */
 	public function getSubscriber() {
 		return $this->subscriber;
 	}
 	
 	/**
-	 * @param Subscriber $subscriber
+	 * @param \PayPal\Api\Subscription\Subscriber $subscriber
 	 *
 	 * @return $this
 	 */
@@ -184,14 +185,14 @@ class Subscription extends PayPalResourceModel
 	}
 	
 	/**
-	 * @return ApplicationContext
+	 * @return \PayPal\Api\Subscription\ApplicationContext
 	 */
 	public function getApplicationContext() {
 		return $this->application_context;
 	}
 	
 	/**
-	 * @param ApplicationContext $application_context
+	 * @param \PayPal\Api\Subscription\ApplicationContext $application_context
 	 *
 	 * @return $this
 	 */
@@ -256,14 +257,14 @@ class Subscription extends PayPalResourceModel
 	}
 	
 	/**
-	 * @return BillingInfo
+	 * @return \PayPal\Api\Subscription\BillingInfo
 	 */
 	public function getBillingInfo() {
 		return $this->billing_info;
 	}
 	
 	/**
-	 * @param BillingInfo $billing_info
+	 * @param \PayPal\Api\Subscription\BillingInfo $billing_info
 	 *
 	 * @return $this
 	 */

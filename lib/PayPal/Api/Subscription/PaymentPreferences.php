@@ -10,7 +10,7 @@ use PayPal\Common\PayPalModel;
  * @package PayPal\Api
  *
  * @property boolean auto_bill_outstanding
- * @property Money setup_fee
+ * @property \PayPal\Api\Subscription\Money setup_fee
  * @property string setup_fee_failure_action
  * @property integer payment_failure_threshold
  */
@@ -34,14 +34,14 @@ class PaymentPreferences extends PayPalModel {
 	}
 	
 	/**
-	 * @return Money
+	 * @return \PayPal\Api\Subscription\Money
 	 */
 	public function getSetupFee() {
 		return $this->setup_fee;
 	}
 	
 	/**
-	 * @param Money $setup_fee
+	 * @param \PayPal\Api\Subscription\Money $setup_fee
 	 *
 	 * @return $this
 	 */

@@ -17,9 +17,9 @@ use PayPal\Validation\ArgumentValidator;
  * @property string name
  * @property string status
  * @property string description
- * @property BillingCycle[] billing_cycles
- * @property PaymentPreferences payment_preferences
- * @property Taxes taxes
+ * @property \PayPal\Api\Subscription\BillingCycle[] billing_cycles
+ * @property \PayPal\Api\Subscription\PaymentPreferences payment_preferences
+ * @property \PayPal\Api\Subscription\Taxes taxes
  * @property boolean quantity_supported
  * @property string create_time
  * @property string update_time
@@ -115,14 +115,14 @@ class Plan extends PayPalResourceModel {
 	}
 	
 	/**
-	 * @return BillingCycle[]
+	 * @return \PayPal\Api\Subscription\BillingCycle[]
 	 */
 	public function getBillingCycles() {
 		return $this->billing_cycles;
 	}
 	
 	/**
-	 * @param BillingCycle[] $billing_cycles
+	 * @param \PayPal\Api\Subscription\BillingCycle[] $billing_cycles
 	 *
 	 * @return $this
 	 */
@@ -135,7 +135,7 @@ class Plan extends PayPalResourceModel {
 	/**
 	 * Append BillingCycle to the list.
 	 *
-	 * @param BillingCycle $billingCycle
+	 * @param \PayPal\Api\Subscription\BillingCycle $billingCycle
 	 * @return $this
 	 */
 	public function addBillingCycle($billingCycle)
@@ -150,14 +150,14 @@ class Plan extends PayPalResourceModel {
 	}
 	
 	/**
-	 * @return PaymentPreferences
+	 * @return \PayPal\Api\Subscription\PaymentPreferences
 	 */
 	public function getPaymentPreferences() {
 		return $this->payment_preferences;
 	}
 	
 	/**
-	 * @param PaymentPreferences $payment_preferences
+	 * @param \PayPal\Api\Subscription\PaymentPreferences $payment_preferences
 	 *
 	 * @return $this
 	 */
@@ -168,14 +168,14 @@ class Plan extends PayPalResourceModel {
 	}
 	
 	/**
-	 * @return Taxes
+	 * @return \PayPal\Api\Subscription\Taxes
 	 */
 	public function getTaxes() {
 		return $this->taxes;
 	}
 	
 	/**
-	 * @param Taxes $taxes
+	 * @param \PayPal\Api\Subscription\Taxes $taxes
 	 *
 	 * @return $this
 	 */

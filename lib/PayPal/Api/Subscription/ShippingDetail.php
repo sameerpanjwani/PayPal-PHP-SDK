@@ -8,19 +8,19 @@ use PayPal\Common\PayPalModel;
  *
  * @package PayPal\Api\Subscription
  *
- * @property Name name
- * @property ShippingAddress address
+ * @property \PayPal\Api\Subscription\Name name
+ * @property \PayPal\Api\Subscription\ShippingAddress address
  */
 class ShippingDetail extends PayPalModel {
 	/**
-	 * @return Name
+	 * @return \PayPal\Api\Subscription\Name
 	 */
 	public function getName() {
 		return $this->name;
 	}
 	
 	/**
-	 * @param Name $name
+	 * @param \PayPal\Api\Subscription\Name $name
 	 *
 	 * @return $this
 	 */
@@ -31,14 +31,14 @@ class ShippingDetail extends PayPalModel {
 	}
 	
 	/**
-	 * @return ShippingAddress
+	 * @return \PayPal\Api\Subscription\ShippingAddress
 	 */
 	public function getAddress() {
 		return $this->address;
 	}
 	
 	/**
-	 * @param ShippingAddress $address
+	 * @param \PayPal\Api\Subscription\ShippingAddress $address
 	 *
 	 * @return $this
 	 */

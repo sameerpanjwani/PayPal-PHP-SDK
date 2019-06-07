@@ -8,20 +8,20 @@ use PayPal\Common\PayPalModel;
  *
  * @package PayPal\Api
  *
- * @property Name name
+ * @property \PayPal\Api\Subscription\Name name
  * @property string email_address
- * @property ShippingAddress shipping_address
+ * @property \PayPal\Api\Subscription\ShippingAddress shipping_address
  */
 class Subscriber extends PayPalModel {
 	/**
-	 * @return Name
+	 * @return \PayPal\Api\Subscription\Name
 	 */
 	public function getName() {
 		return $this->name;
 	}
 	
 	/**
-	 * @param Name $name
+	 * @param \PayPal\Api\Subscription\Name $name
 	 *
 	 * @return $this
 	 */
@@ -50,14 +50,14 @@ class Subscriber extends PayPalModel {
 	}
 	
 	/**
-	 * @return ShippingAddress
+	 * @return \PayPal\Api\Subscription\ShippingAddress
 	 */
 	public function getShippingAddress() {
 		return $this->shipping_address;
 	}
 	
 	/**
-	 * @param ShippingAddress $shipping_address
+	 * @param \PayPal\Api\Subscription\ShippingAddress $shipping_address
 	 *
 	 * @return $this
 	 */

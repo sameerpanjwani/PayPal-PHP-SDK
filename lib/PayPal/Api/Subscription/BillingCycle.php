@@ -8,22 +8,22 @@ use PayPal\Common\PayPalModel;
  *
  * @package PayPal\Api
  *
- * @property PricingScheme pricing_scheme
- * @property Frequency frequency
+ * @property \PayPal\Api\Subscription\PricingScheme pricing_scheme
+ * @property \PayPal\Api\Subscription\Frequency frequency
  * @property string tenure_type
  * @property integer sequence
  * @property integer total_cycles
  */
 class BillingCycle extends PayPalModel {
 	/**
-	 * @return PricingScheme
+	 * @return \PayPal\Api\Subscription\PricingScheme
 	 */
 	public function getPricingScheme() {
 		return $this->pricing_scheme;
 	}
 	
 	/**
-	 * @param PricingScheme $pricing_scheme
+	 * @param \PayPal\Api\Subscription\PricingScheme $pricing_scheme
 	 *
 	 * @return $this
 	 */
@@ -34,14 +34,14 @@ class BillingCycle extends PayPalModel {
 	}
 	
 	/**
-	 * @return Frequency
+	 * @return \PayPal\Api\Subscription\Frequency
 	 */
 	public function getFrequency() {
 		return $this->frequency;
 	}
 	
 	/**
-	 * @param Frequency $frequency
+	 * @param \PayPal\Api\Subscription\Frequency $frequency
 	 *
 	 * @return $this
 	 */
