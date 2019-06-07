@@ -14,9 +14,22 @@ if (defined('CREATED_PLAN_ID')) {
 }
 
 
+$baseUrl = getBaseUrl();
+
+$applicationContext = new \PayPal\Api\Subscription\ApplicationContext();
+$applicationContext
+	->setBrandName('My Custom Brand Name')
+	->setLocale('en-US')
+	->setShippingPreference('GET_FROM_FILE')
+	->setUserAction('SUBSCRIBE_NOW')
+	->setPaymentMethod(new \PayPal\Api\Subscription\PaymentMethod(array('payer_selected' => 'PAYPAL', 'payee_preferred' => 'UNRESTRICTED')))
+	->setReturnUrl('http://example.com/returnUrl')
+	->setCancelUrl('http://example.com/cancelUrl');
+
 $subscription = new \PayPal\Api\Subscription\Subscription();
 $subscription
 	->setPlanId($planId)
+	->setApplicationContext($applicationContext)
 	#->setStartTime(date('c'))
 	#->setQuantity(1)
 ;
