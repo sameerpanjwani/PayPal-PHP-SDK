@@ -1,5 +1,5 @@
 <?php
-namespace PayPal\Api;
+namespace PayPal\Api\Subscription;
 
 use PayPal\Common\PayPalModel;
 
@@ -8,7 +8,7 @@ use PayPal\Common\PayPalModel;
  *
  * @package PayPal\Api
  *
- * @property \Paypal\Api\Name name
+ * @property Name name
  * @property string email_address
  * @property ShippingAddress shipping_address
  */

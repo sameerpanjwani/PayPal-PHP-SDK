@@ -1,13 +1,7 @@
 <?php
 namespace PayPal\Api\Subscription;
 
-use PayPal\Api\BillingCycle;
 use PayPal\Api\PatchRequest;
-use PayPal\Api\PaymentPreferences;
-use PayPal\Api\PricingScheme;
-use PayPal\Api\Subscription;
-use PayPal\Api\Tax;
-use PayPal\Api\Taxes;
 use PayPal\Common\PayPalResourceModel;
 use PayPal\Rest\ApiContext;
 use PayPal\Transport\PayPalRestCall;
@@ -141,7 +135,7 @@ class Plan extends PayPalResourceModel {
 	/**
 	 * Append BillingCycle to the list.
 	 *
-	 * @param \PayPal\Api\BillingCycle $billingCycle
+	 * @param BillingCycle $billingCycle
 	 * @return $this
 	 */
 	public function addBillingCycle($billingCycle)

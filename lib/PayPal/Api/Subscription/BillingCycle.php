@@ -1,5 +1,5 @@
 <?php
-namespace PayPal\Api;
+namespace PayPal\Api\Subscription;
 
 use PayPal\Common\PayPalModel;
 

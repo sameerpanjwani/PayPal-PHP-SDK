@@ -1,6 +1,6 @@
 <?php
 
-namespace PayPal\Api;
+namespace PayPal\Api\Subscription;
 
 use PayPal\Common\PayPalResourceModel;
 use PayPal\Core\PayPalConstants;
@@ -18,15 +18,15 @@ use PayPal\Validation\ArgumentValidator;
  * @property string id
  * @property string plan_id
  * @property string quantity
- * @property \PayPal\Api\ShippingAmount shipping_amount
- * @property \PayPal\Api\Subscriber subscriber
+ * @property ShippingAmount shipping_amount
+ * @property Subscriber subscriber
  * @property bool auto_renewal
- * @property \PayPal\Api\ApplicationContext application_context
+ * @property ApplicationContext application_context
  * @property string status
  * @property string status_change_note
  * @property string status_update_time
  * @property string start_time
- * @property \PayPal\Api\BillingInfo billing_info
+ * @property BillingInfo billing_info
  * @property string create_time
  * @property string update_time
  */

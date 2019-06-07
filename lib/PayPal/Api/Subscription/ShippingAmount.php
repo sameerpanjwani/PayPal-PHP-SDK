@@ -1,5 +1,5 @@
 <?php
-namespace PayPal\Api;
+namespace PayPal\Api\Subscription;
 
 use PayPal\Common\PayPalModel;
 use PayPal\Common\PayPalResourceModel;
@@ -13,7 +13,6 @@ use PayPal\Common\PayPalResourceModel;
  * @property string value
  */
 class ShippingAmount extends PayPalModel {
-	
 	public function setCurrencyCode( $currency_code ) {
 		$this->currency_code = $currency_code;
 		return $this;
@@ -31,5 +30,4 @@ class ShippingAmount extends PayPalModel {
 	public function getValue() {
 		return $this->value;
 	}
-	
 }

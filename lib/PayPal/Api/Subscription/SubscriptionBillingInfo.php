@@ -1,9 +1,6 @@
 <?php
-namespace PayPal\Api;
+namespace PayPal\Api\Subscription;
 
-use PayPal\Api\Subscription\CycleExecution;
-use PayPal\Api\Subscription\LastPaymentDetails;
-use PayPal\Api\Subscription\Money;
 use PayPal\Common\PayPalModel;
 
 /**
