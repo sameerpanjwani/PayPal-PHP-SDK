@@ -15,7 +15,7 @@ use PayPal\Common\PayPalModel;
  * @property string locale
  * @property string shipping_preference
  * @property string user_action
- * @property string payment_method
+ * @property \PayPal\Api\Subscription\PaymentMethod payment_method
  * @property string return_url
  * @property string cancel_url
  */
@@ -120,7 +120,7 @@ class ApplicationContext extends PayPalModel {
 	/**
 	 * The customer and merchant payment preferences.
 	 *
-	 * @return string
+	 * @return \PayPal\Api\Subscription\PaymentMethod
 	 */
 	public function getPaymentMethod() {
 		return $this->payment_method;
@@ -129,7 +129,7 @@ class ApplicationContext extends PayPalModel {
 	/**
 	 * The customer and merchant payment preferences. Currently only PAYPAL payment method is supported.
 	 *
-	 * @param string $payment_method
+	 * @param \PayPal\Api\Subscription\PaymentMethod $payment_method
 	 *
 	 * @return $this
 	 */
