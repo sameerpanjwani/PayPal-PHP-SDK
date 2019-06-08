@@ -220,7 +220,8 @@ if (PHP_SAPI == 'cli') {
                     <li><a href="#authorization">Authorization and Capture</a></li>
                     <li><a href="#sale">Sale</a></li>
                     <li><a href="#order">Order</a></li>
-                    <li><a href="#billing">Billing Plan & Agreements</a></li>
+                    <li><a href="#billing">Billing Plan & Agreements (Deprecated)</a></li>
+                    <li><a href="#subscriptions">Plans & Subscriptions</a></li>
                     <li><a href="#experience">Payment Experience</a></li>
                     <li><a href="#notifications">Notifications</a></li>
                     <li><a href="#invoice">Invoice</a></li>
@@ -658,174 +659,269 @@ if (PHP_SAPI == 'cli') {
 
                 </ul>
             </div>
-
+  
             <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 id="billing" class="panel-title"><a
-                            href="https://developer.paypal.com/docs/api/#billing-plans-and-agreements"
-                            target="_blank">Billing Plan & Agreements</a></h3>
-                </div>
-                <!-- List group -->
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-md-8"><h5>Create Billing Plan</h5></div>
-                            <div class="col-md-4">
-                                <a href="billing/CreatePlan.php" class="btn btn-primary pull-left execute"> Try It <i
-                                        class="fa fa-play-circle-o"></i></a>
-                                <a href="doc/billing/CreatePlan.html" class="btn btn-default pull-right">Source <i
-                                        class="fa fa-file-code-o"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-md-8"><h5>Get Billing Plan</h5></div>
-                            <div class="col-md-4">
-                                <a href="billing/GetPlan.php" class="btn btn-primary pull-left execute"> Try It <i
-                                        class="fa fa-play-circle-o"></i></a>
-                                <a href="doc/billing/GetPlan.html" class="btn btn-default pull-right">Source <i
-                                        class="fa fa-file-code-o"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-md-8"><h5>Update/Activate Plan</h5></div>
-                            <div class="col-md-4">
-                                <a href="billing/UpdatePlan.php" class="btn btn-primary pull-left execute"> Try It <i
-                                        class="fa fa-play-circle-o"></i></a>
-                                <a href="doc/billing/UpdatePlan.html" class="btn btn-default pull-right">Source <i
-                                        class="fa fa-file-code-o"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-md-8"><h5>Update Plan Payment Definitions/Amount</h5></div>
-                            <div class="col-md-4">
-                                <a href="billing/UpdatePlanPaymentDefinitions.php"
-                                   class="btn btn-primary pull-left execute">
-                                    Try It <i class="fa fa-play-circle-o"></i></a>
-                                <a href="doc/billing/UpdatePlanPaymentDefinitions.html" class="btn btn-default pull-right">Source
-                                    <i
-                                        class="fa fa-file-code-o"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-md-8"><h5>Delete Billing Plan</h5></div>
-                            <div class="col-md-4">
-                                <a href="billing/DeletePlan.php" class="btn btn-primary pull-left execute"> Try It <i
-                                        class="fa fa-play-circle-o"></i></a>
-                                <a href="doc/billing/DeletePlan.html" class="btn btn-default pull-right">Source <i
-                                        class="fa fa-file-code-o"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-md-8"><h5>List Billing Plans</h5></div>
-                            <div class="col-md-4">
-                                <a href="billing/ListPlans.php" class="btn btn-primary pull-left execute"> Try It <i
-                                        class="fa fa-play-circle-o"></i></a>
-                                <a href="doc/billing/ListPlans.html" class="btn btn-default pull-right">Source <i
-                                        class="fa fa-file-code-o"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-md-8"><h5>Create Billing Agreement With PayPal</h5></div>
-                            <div class="col-md-4">
-                                <a href="billing/CreateBillingAgreementWithPayPal.php"
-                                   class="btn btn-primary pull-left execute">
-                                    Try It <i class="fa fa-play-circle-o"></i></a>
-                                <a href="doc/billing/CreateBillingAgreementWithPayPal.html"
-                                   class="btn btn-default pull-right">Source
-                                    <i class="fa fa-file-code-o"></i></a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8">
-                                <h6>Step II: Execute after Success
-                                    <small>(required step after user approval)</small></h6>
-                            </div>
-                            <div class="col-md-4">
-                                <a
-                                    href="doc/billing/ExecuteAgreement.html"
-                                    class="btn btn-default pull-right">Part II : Source <i
-                                        class="fa fa-file-code-o"></i></a>
-
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-md-8"><h5>Get Billing Agreement</h5></div>
-                            <div class="col-md-4">
-                                <a href="billing/GetBillingAgreement.php" class="btn btn-primary pull-left execute"> Try It
-                                    <i
-                                        class="fa fa-play-circle-o"></i></a>
-                                <a href="doc/billing/GetBillingAgreement.html" class="btn btn-default pull-right">Source <i
-                                        class="fa fa-file-code-o"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-md-8"><h5>Search for Transactions</h5></div>
-                            <div class="col-md-4">
-                                <a href="billing/SearchBillingTransactions.php" class="btn btn-primary pull-left execute"> Try It
-                                    <i
-                                        class="fa fa-play-circle-o"></i></a>
-                                <a href="doc/billing/SearchBillingTransactions.html" class="btn btn-default pull-right">Source <i
-                                        class="fa fa-file-code-o"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-md-8"><h5>Update Billing Agreement</h5></div>
-                            <div class="col-md-4">
-                                <a href="billing/UpdateBillingAgreement.php" class="btn btn-primary pull-left execute">
-                                    Try It <i
-                                        class="fa fa-play-circle-o"></i></a>
-                                <a href="doc/billing/UpdateBillingAgreement.html" class="btn btn-default pull-right">Source
-                                    <i
-                                        class="fa fa-file-code-o"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-md-8"><h5>Suspend Billing Agreement</h5></div>
-                            <div class="col-md-4">
-                                <a href="billing/SuspendBillingAgreement.php" class="btn btn-primary pull-left execute">
-                                    Try It <i
-                                        class="fa fa-play-circle-o"></i></a>
-                                <a href="doc/billing/SuspendBillingAgreement.html" class="btn btn-default pull-right">Source
-                                    <i
-                                        class="fa fa-file-code-o"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-md-8"><h5>Reactivate Billing Agreement</h5></div>
-                            <div class="col-md-4">
-                                <a href="billing/ReactivateBillingAgreement.php" class="btn btn-primary pull-left execute">
-                                    Try It
-                                    <i class="fa fa-play-circle-o"></i></a>
-                                <a href="doc/billing/ReactivateBillingAgreement.html" class="btn btn-default pull-right">Source
-                                    <i
-                                        class="fa fa-file-code-o"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+              <div class="panel-heading">
+                <h3 id="billing" class="panel-title"><a
+                      href="https://developer.paypal.com/docs/api/#billing-plans-and-agreements"
+                      target="_blank">Billing Plan & Agreements</a></h3>
+              </div>
+              <!-- List group -->
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Create Billing Plan</h5></div>
+                    <div class="col-md-4">
+                      <a href="billing/CreatePlan.php" class="btn btn-primary pull-left execute"> Try It <i
+                            class="fa fa-play-circle-o"></i></a>
+                      <a href="doc/billing/CreatePlan.html" class="btn btn-default pull-right">Source <i
+                            class="fa fa-file-code-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Get Billing Plan</h5></div>
+                    <div class="col-md-4">
+                      <a href="billing/GetPlan.php" class="btn btn-primary pull-left execute"> Try It <i
+                            class="fa fa-play-circle-o"></i></a>
+                      <a href="doc/billing/GetPlan.html" class="btn btn-default pull-right">Source <i
+                            class="fa fa-file-code-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Update/Activate Plan</h5></div>
+                    <div class="col-md-4">
+                      <a href="billing/UpdatePlan.php" class="btn btn-primary pull-left execute"> Try It <i
+                            class="fa fa-play-circle-o"></i></a>
+                      <a href="doc/billing/UpdatePlan.html" class="btn btn-default pull-right">Source <i
+                            class="fa fa-file-code-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Update Plan Payment Definitions/Amount</h5></div>
+                    <div class="col-md-4">
+                      <a href="billing/UpdatePlanPaymentDefinitions.php"
+                         class="btn btn-primary pull-left execute">
+                        Try It <i class="fa fa-play-circle-o"></i></a>
+                      <a href="doc/billing/UpdatePlanPaymentDefinitions.html" class="btn btn-default pull-right">Source
+                        <i
+                            class="fa fa-file-code-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Delete Billing Plan</h5></div>
+                    <div class="col-md-4">
+                      <a href="billing/DeletePlan.php" class="btn btn-primary pull-left execute"> Try It <i
+                            class="fa fa-play-circle-o"></i></a>
+                      <a href="doc/billing/DeletePlan.html" class="btn btn-default pull-right">Source <i
+                            class="fa fa-file-code-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>List Billing Plans</h5></div>
+                    <div class="col-md-4">
+                      <a href="billing/ListPlans.php" class="btn btn-primary pull-left execute"> Try It <i
+                            class="fa fa-play-circle-o"></i></a>
+                      <a href="doc/billing/ListPlans.html" class="btn btn-default pull-right">Source <i
+                            class="fa fa-file-code-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Create Billing Agreement With PayPal</h5></div>
+                    <div class="col-md-4">
+                      <a href="billing/CreateBillingAgreementWithPayPal.php"
+                         class="btn btn-primary pull-left execute">
+                        Try It <i class="fa fa-play-circle-o"></i></a>
+                      <a href="doc/billing/CreateBillingAgreementWithPayPal.html"
+                         class="btn btn-default pull-right">Source
+                        <i class="fa fa-file-code-o"></i></a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8">
+                      <h6>Step II: Execute after Success
+                        <small>(required step after user approval)</small></h6>
+                    </div>
+                    <div class="col-md-4">
+                      <a
+                          href="doc/billing/ExecuteAgreement.html"
+                          class="btn btn-default pull-right">Part II : Source <i
+                            class="fa fa-file-code-o"></i></a>
+            
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Get Billing Agreement</h5></div>
+                    <div class="col-md-4">
+                      <a href="billing/GetBillingAgreement.php" class="btn btn-primary pull-left execute"> Try It
+                        <i
+                            class="fa fa-play-circle-o"></i></a>
+                      <a href="doc/billing/GetBillingAgreement.html" class="btn btn-default pull-right">Source <i
+                            class="fa fa-file-code-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Search for Transactions</h5></div>
+                    <div class="col-md-4">
+                      <a href="billing/SearchBillingTransactions.php" class="btn btn-primary pull-left execute"> Try It
+                        <i
+                            class="fa fa-play-circle-o"></i></a>
+                      <a href="doc/billing/SearchBillingTransactions.html" class="btn btn-default pull-right">Source <i
+                            class="fa fa-file-code-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Update Billing Agreement</h5></div>
+                    <div class="col-md-4">
+                      <a href="billing/UpdateBillingAgreement.php" class="btn btn-primary pull-left execute">
+                        Try It <i
+                            class="fa fa-play-circle-o"></i></a>
+                      <a href="doc/billing/UpdateBillingAgreement.html" class="btn btn-default pull-right">Source
+                        <i
+                            class="fa fa-file-code-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Suspend Billing Agreement</h5></div>
+                    <div class="col-md-4">
+                      <a href="billing/SuspendBillingAgreement.php" class="btn btn-primary pull-left execute">
+                        Try It <i
+                            class="fa fa-play-circle-o"></i></a>
+                      <a href="doc/billing/SuspendBillingAgreement.html" class="btn btn-default pull-right">Source
+                        <i
+                            class="fa fa-file-code-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Reactivate Billing Agreement</h5></div>
+                    <div class="col-md-4">
+                      <a href="billing/ReactivateBillingAgreement.php" class="btn btn-primary pull-left execute">
+                        Try It
+                        <i class="fa fa-play-circle-o"></i></a>
+                      <a href="doc/billing/ReactivateBillingAgreement.html" class="btn btn-default pull-right">Source
+                        <i
+                            class="fa fa-file-code-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
+    
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 id="subscriptions" class="panel-title"><a
+                      href="https://developer.paypal.com/docs/api/subscriptions/v1/"
+                      target="_blank">Subscriptions & Plans</a></h3>
+              </div>
+              <!-- List group -->
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Create a Product</h5></div>
+                    <div class="col-md-4">
+                      <a href="subscriptions/CreateProduct.php" class="btn btn-primary pull-left execute"> Try It <i
+                            class="fa fa-play-circle-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Get Product</h5></div>
+                    <div class="col-md-4">
+                      <a href="subscriptions/GetProduct.php" class="btn btn-primary pull-left execute"> Try It <i
+                            class="fa fa-play-circle-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>List Products</h5></div>
+                    <div class="col-md-4">
+                      <a href="subscriptions/ListProducts.php" class="btn btn-primary pull-left execute"> Try It <i
+                            class="fa fa-play-circle-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                
+                <!-- TODO: Update Product -->
+                
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Create a Plan</h5></div>
+                    <div class="col-md-4">
+                      <a href="subscriptions/CreatePlan.php" class="btn btn-primary pull-left execute"> Try It <i
+                            class="fa fa-play-circle-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Get Plan</h5></div>
+                    <div class="col-md-4">
+                      <a href="subscriptions/GetPlan.php" class="btn btn-primary pull-left execute"> Try It <i
+                            class="fa fa-play-circle-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>List Plans</h5></div>
+                    <div class="col-md-4">
+                      <a href="subscriptions/ListPlans.php" class="btn btn-primary pull-left execute"> Try It <i
+                            class="fa fa-play-circle-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                
+                <!-- TODO: Update Plan, Activate Plan, Deactivate Plan, Update Pricing -->
+                
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Create a Subscription</h5></div>
+                    <div class="col-md-4">
+                      <a href="subscriptions/CreateSubscription.php" class="btn btn-primary pull-left execute"> Try It <i
+                            class="fa fa-play-circle-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+  
+                <!-- TODO: Get Subscription, Update Subscription, Suspend Subscription, Activate Subscription, Cancel Subscription -->
+                
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-8"><h5>Create Product, Plan and Subscription</h5></div>
+                    <div class="col-md-4">
+                      <a href="subscriptions/CreateProductPlanAndSubscription.php"
+                         class="btn btn-primary pull-left execute">
+                        Try It <i class="fa fa-play-circle-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+                
+              </ul>
+            </div>
+          
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 id="experience" class="panel-title"><a
