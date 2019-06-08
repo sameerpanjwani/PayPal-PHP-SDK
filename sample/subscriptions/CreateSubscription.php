@@ -15,6 +15,8 @@ if (defined('CREATED_PLAN_ID')) {
 
 
 $baseUrl = getBaseUrl();
+// localhost does not work in subscription api (invalid format, because .com/.org/.etc is missing, ip works)
+$baseUrl = str_replace('localhost', '127.0.0.1', $baseUrl);
 
 $applicationContext = new \PayPal\Api\Subscription\ApplicationContext();
 $applicationContext
@@ -23,8 +25,8 @@ $applicationContext
 	->setShippingPreference('GET_FROM_FILE')
 	->setUserAction('SUBSCRIBE_NOW')
 	->setPaymentMethod(new \PayPal\Api\Subscription\PaymentMethod(array('payer_selected' => 'PAYPAL', 'payee_preferred' => 'UNRESTRICTED')))
-	->setReturnUrl('http://example.com/returnUrl')
-	->setCancelUrl('http://example.com/cancelUrl');
+	->setReturnUrl($baseUrl.'/AfterSubscription.php?success=true')
+	->setCancelUrl($baseUrl.'/AfterSubscription.php?success=false');
 
 $subscription = new \PayPal\Api\Subscription\Subscription();
 $subscription
