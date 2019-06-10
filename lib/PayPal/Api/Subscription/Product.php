@@ -157,6 +157,8 @@ class Product extends PayPalResourceModel {
 	 */
 	public function create($apiContext = null, $restCall = null)
 	{
+		ArgumentValidator::validate($this->getName(), 'name');
+		ArgumentValidator::validate($this->getType(), 'type');
 		$payLoad = $this->toJSON();
 		$json = self::executeCall(
 			"/v1/catalogs/products/",

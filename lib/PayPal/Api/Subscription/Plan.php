@@ -243,7 +243,7 @@ class Plan extends PayPalResourceModel {
 	
 	
 	/**
-	 * Create a new subscription
+	 * Creates a plan that defines pricing and billing cycle details for subscriptions.
 	 *
 	 * @param ApiContext $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
 	 * @param PayPalRestCall $restCall is the Rest Call Service that is used to make rest calls
@@ -251,6 +251,10 @@ class Plan extends PayPalResourceModel {
 	 */
 	public function create($apiContext = null, $restCall = null)
 	{
+		ArgumentValidator::validate($this->getProductId(), 'productId');
+		ArgumentValidator::validate($this->getName(), 'name');
+		ArgumentValidator::validate($this->getBillingCycles(), 'billingCycles');
+		ArgumentValidator::validate($this->getPaymentPreferences(), 'paymentPreferences');
 		$payLoad = $this->toJSON();
 		$json = self::executeCall(
 			"/v1/billing/plans/",
@@ -290,16 +294,22 @@ class Plan extends PayPalResourceModel {
 	}
 	
 	/**
-	 * Update details of a billing agreement, such as the description, shipping address, and start date, by passing the ID of the agreement to the request URI.
+	 * Updates a plan with the CREATED or ACTIVE status. For an INACTIVE plan, you can make only status updates.
+	 * You can patch these attributes and objects:
+	 * - description
+	 * - auto_bill_outstanding
+	 * - taxes.percentage
+	 * - payment_preferences.payment_failure_threshold
 	 *
 	 * @param PatchRequest $patchRequest
 	 * @param ApiContext $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
 	 * @param PayPalRestCall $restCall is the Rest Call Service that is used to make rest calls
+	 *
 	 * @return bool
 	 */
 	public function update($patchRequest, $apiContext = null, $restCall = null)
 	{
-		ArgumentValidator::validate($this->getId(), "Id");
+		ArgumentValidator::validate($this->getId(), 'id');
 		ArgumentValidator::validate($patchRequest, 'patchRequest');
 		$payLoad = $patchRequest->toJSON();
 		self::executeCall(
@@ -314,7 +324,7 @@ class Plan extends PayPalResourceModel {
 	}
 	
 	/**
-	 * Activates the Plan
+	 * Activates a plan, by ID.
 	 *
 	 * @param ApiContext $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
 	 * @param PayPalRestCall $restCall is the Rest Call Service that is used to make rest calls
@@ -322,7 +332,7 @@ class Plan extends PayPalResourceModel {
 	 */
 	public function activate($apiContext = null, $restCall = null)
 	{
-		ArgumentValidator::validate($this->getId(), "Id");
+		ArgumentValidator::validate($this->getId(), 'id');
 		$payLoad = "";
 		self::executeCall(
 			"/v1/billing/plans/{$this->getId()}/activate",
@@ -336,7 +346,7 @@ class Plan extends PayPalResourceModel {
 	}
 	
 	/**
-	 * Deactivates the Plan
+	 * Deactivates a plan, by ID.
 	 *
 	 * @param ApiContext $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
 	 * @param PayPalRestCall $restCall is the Rest Call Service that is used to make rest calls
@@ -344,7 +354,7 @@ class Plan extends PayPalResourceModel {
 	 */
 	public function deActivate($apiContext = null, $restCall = null)
 	{
-		ArgumentValidator::validate($this->getId(), "Id");
+		ArgumentValidator::validate($this->getId(), 'id');
 		$payLoad = "";
 		self::executeCall(
 			"/v1/billing/plans/{$this->getId()}/deactivate",
@@ -367,7 +377,8 @@ class Plan extends PayPalResourceModel {
 	 */
 	public function updatePricing($pricingScheme, $apiContext = null, $restCall = null)
 	{
-		ArgumentValidator::validate($this->getId(), "Id");
+		ArgumentValidator::validate($this->getId(), 'id');
+		ArgumentValidator::validate($pricingScheme, 'pricingScheme');
 		$payLoad = $pricingScheme->toJSON();
 		self::executeCall(
 			"/v1/billing/plans/{$this->getId()}/update-pricing-schemes",
@@ -381,7 +392,7 @@ class Plan extends PayPalResourceModel {
 	}
 	
 	/**
-	 * List billing plans according to optional query string parameters specified.
+	 * Lists billing plans.
 	 *
 	 * @param array $params
 	 * @param ApiContext $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
