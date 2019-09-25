@@ -489,7 +489,8 @@ class Subscription extends PayPalResourceModel
 			$apiContext,
 			$restCall
 		);
-		$ret = new TransactionList();
+		//$ret = new TransactionList();
+        $ret = new self();
 		$ret->fromJson($json);
 		return $ret;
 	}
